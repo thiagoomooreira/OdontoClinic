@@ -2,6 +2,7 @@
 Um sistema .Net simples para organizar consultas em clínicas. 
 
 ![alt text](https://github.com/thiagoomooreira/OdontoClinic/blob/master/Prints/consultas.png)
+![alt text](https://github.com/thiagoomooreira/OdontoClinic/blob/master/Prints/marcarConsulta.png)
 
 ## Sobre o projeto
 
