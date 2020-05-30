@@ -40,7 +40,8 @@ namespace OdontoClinic.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar([Bind(Include = "id,nome,celular,email,data,hora")]Consulta consulta) {
+        public ActionResult Editar([Bind(Include = "id,nome,celular,email,data,hora")]Consulta consulta, string data, string hora) {
+            consulta.Data = Convert.ToDateTime(data + " " + hora);
             var consultaBanco = _db.Consultas.Where(l => l.Id == consulta.Id).FirstOrDefault();
             if(consultaBanco != null) {
                 consultaBanco.Nome = consulta.Nome;
