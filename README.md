@@ -14,3 +14,11 @@ Um sistema .Net simples para organizar consultas em clínicas.
 
 2 - É possivel filtrar a lista de consultas pelo nome do paciente ou consultas do dia atual.
 
+## Implementação
+- O front-end desta aplicação foi desenvolvida com o framework [Materialize](https://materializecss.com/).
+- Com persistência de dados SQL Server.
+- Arquitetura MVC.
+
+*Projeto publicado em 29/05/2020*
+
+
