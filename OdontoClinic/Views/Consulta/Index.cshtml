@@ -1,0 +1,65 @@
+﻿@model List<OdontoClinic.Models.Consulta>
+<div class="Conteiner">
+    <h3 class="center-align">Consultas</h3>
+    <hr />
+    <div class="row  alinhamento">
+        <div class="col s4 alinhamento">
+            <a href="@Url.Action("Agendar", "Consulta")" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+        </div>
+
+        <div class="col s2" id="drop">
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Filtro</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="@Url.Action("FiltrarLista",new { filtro = "hoje" })">Hoje</a></li>
+                <li><a href="@Url.Action("FiltrarLista",new { filtro = "todos" })">Todos</a></li>
+            </ul>
+        </div>
+        @using(Html.BeginForm("PesquisarPaciente", "Consulta", FormMethod.Post)) {
+            <div class="input-field col s5 alinhamento">
+                <input name="nome" placeholder="Pesquisar Paciente" id="first_name" type="text" class="validate">
+            </div>
+            <button class="btn waves-effect waves-light col s1 right" type="submit" name="action">
+                <i class="material-icons">search</i>
+            </button>
+        }
+    </div>
+    <hr />
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th>Paciente</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Celular</th>
+            <th>Email</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+        </tr>
+        @foreach(var c in Model) {
+            <tr>
+                <td>@c.Nome</td>
+                <td>@c.Data.ToString("dd/MM")</td>
+                <td>@c.Data.ToString("HH:mm")</td>
+                <td>@c.Celular</td>
+                <td>@c.Email</td>
+                <td>
+                    <a href="@Url.Action("EditarConsulta", "Consulta",c)" class="purple darken-4 hoverable btn waves-effect waves-light"><i class="material-icons">edit</i></a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Deletar", "Consulta" , c)" class="red darken-1 hoverable btn waves-effect waves-light"><i class="material-icons">delete</i></a>
+                    
+                </td>
+            </tr>
+
+        }
+    </table>
+    
+</div>
+
+<script >
+
+
+</script>

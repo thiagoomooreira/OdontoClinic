@@ -1,0 +1,15 @@
+﻿.box {
+    margin-top: 10%;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px;
+    padding: 3%;
+}
+.alinhamento{
+    margin-top:2%;
+}
+.alinhamento button {
+     margin-top: 3%;
+}
+#drop {
+    margin-top: 3%;
+}

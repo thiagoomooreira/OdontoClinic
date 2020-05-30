@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>OdontoClinic</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/materialize/css/materialize.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/Estilo.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper purple darken-4">
+            <a class="brand-logo">OdontoClinic</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="@Url.Action("Agendar","Consulta")">Agendar</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="@Url.Action("Index","Consulta")">Consultas</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Content/materialize/js/materialize.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        $('.dropdown-trigger').dropdown();
+
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+
+    </script>
+</body>
+</html>
